@@ -1,0 +1,15 @@
+build:
+  version: "1.0"
+
+accounts:
+  message: "Tobi Welcome to Auth related Local APIs Tobi"
+  contactDetails:
+    name: "{cipher}0492d866b919ad737bb6f58b33f1991b4d11cb0bb8d3838b2ad80a5eacf835a6"
+    email: "{cipher}477a7538cdc0a267873cd1f24720481d18178392db8e00023a36621d4c1fe16e7b706be646e73f99e21fa21a6264a5e5"
+  onCallSupport:
+    - (234) 392-4829
+
+eureka:
+  client:
+    service-url:
+      defaultZone=http://localhost:8070/eureka/:

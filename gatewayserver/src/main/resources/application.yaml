@@ -1,0 +1,80 @@
+spring:
+  application:
+    name: "gatewayserver"
+  config:
+    import: "optional:configserver:http://localhost:8071/"
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+          lowerCaseServiceId: false
+          predicates:
+            - Path=/*/**, Path=/{segment}/**
+          filters:
+            - StripPrefix=1
+      routes:
+        - id: user-service-direct
+          uri: http://localhost:8080
+          predicates:
+            - Path=/USER-SERVICE/**
+          filters:
+            - StripPrefix=1
+        - id: auth-service-direct
+          uri: http://localhost:8081
+          predicates:
+            - Path=/AUTH-SERVICE/**
+          filters:
+            - StripPrefix=1
+        - id: third-party-service-direct
+          uri: http://localhost:8082
+          predicates:
+            - Path=/THIRD-PARTY-SERVICE/**
+        - id: transfer-service-direct
+          uri: http://localhost:8083
+          predicates:
+            - Path=/TRANSFER-SERVICE/**
+          filters:
+            - StripPrefix=1
+    compatibility-verifier:
+      enabled: false
+server:
+  port: 8072
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    gateway:
+      enabled: true
+  info:
+    env:
+      enabled: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8070/
+    fetch-registry: true
+    register-with-eureka: true
+    registry-fetch-interval-seconds: 5
+    instance-info-replication-interval-seconds: 5
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+
+logging:
+  level:
+    com:
+      middleware:
+        gatewayserver: DEBUG
+    org:
+      springframework:
+        cloud:
+          gateway: DEBUG
+    root: INFO
+
+
+

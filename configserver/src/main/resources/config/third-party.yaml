@@ -1,0 +1,10 @@
+build:
+  version: "2.0"
+
+loans:
+  message: "Welcome to Third party related QA APIs "
+  contactDetails:
+    name: "Oluwatobi Adebanjo "
+    email: "adettob@gmail.com"
+  onCallSupport:
+    - (234) 392-4829
