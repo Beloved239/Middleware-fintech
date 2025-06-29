@@ -1,0 +1,80 @@
+[
+  {
+    "bankName": "Heritage Capital",
+    "bankNumber": "69105",
+    "accounts": [
+      {
+        "accountName": "Nathan Cole",
+        "accountNumber": "8475102398"
+      },
+      {
+        "accountName": "Zoe Brooks",
+        "accountNumber": "2301948756"
+      },
+      {
+        "accountName": "Ethan Rivera",
+        "accountNumber": "1059837462"
+      },
+      {
+        "accountName": "Grace Adams",
+        "accountNumber": "5948371026"
+      },
+      {
+        "accountName": "Lucas Simmons",
+        "accountNumber": "7301289465"
+      }
+    ]
+  },
+  {
+    "bankName": "Crescent Union Bank",
+    "bankNumber": "84729",
+    "accounts": [
+      {
+        "accountName": "Amelia Turner",
+        "accountNumber": "1928374650"
+      },
+      {
+        "accountName": "Logan Perez",
+        "accountNumber": "5820174936"
+      },
+      {
+        "accountName": "Chloe Green",
+        "accountNumber": "7392018465"
+      },
+      {
+        "accountName": "Daniel Scott",
+        "accountNumber": "8401927365"
+      },
+      {
+        "accountName": "Lily Parker",
+        "accountNumber": "5038291764"
+      }
+    ]
+  },
+  {
+    "bankName": "Summit Financial",
+    "bankNumber": "32984",
+    "accounts": [
+      {
+        "accountName": "Henry Young",
+        "accountNumber": "4719203856"
+      },
+      {
+        "accountName": "Ella Bennett",
+        "accountNumber": "6281930475"
+      },
+      {
+        "accountName": "Jack Cooper",
+        "accountNumber": "7391052846"
+      },
+      {
+        "accountName": "Mila Foster",
+        "accountNumber": "9058371046"
+      },
+      {
+        "accountName": "Noah Bailey",
+        "accountNumber": "2817493056"
+      }
+    ]
+  }
+]

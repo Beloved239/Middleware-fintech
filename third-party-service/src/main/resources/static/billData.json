@@ -1,0 +1,72 @@
+[
+  {
+    "billerId": "112233",
+    "billerName": "9mobile Nigeria",
+    "categories": [
+      {
+        "categoryId": "54321",
+        "categoryName": "Airtime",
+        "products": [
+          {
+            "productId": "776655",
+            "productName": "9x Recharge"
+          },
+          {
+            "productId": "443322",
+            "productName": "Power Boost"
+          }
+        ]
+      },
+      {
+        "categoryId": "65432",
+        "categoryName": "Data",
+        "products": [
+          {
+            "productId": "334455",
+            "productName": "Easy Surf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "billerId": "998877",
+    "billerName": "StarSat Nigeria",
+    "categories": [
+      {
+        "categoryId": "66778",
+        "categoryName": "TV Subscription",
+        "products": [
+          {
+            "productId": "112200",
+            "productName": "Star Basic"
+          },
+          {
+            "productId": "112201",
+            "productName": "Star Premium"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "billerId": "556677",
+    "billerName": "Smile Communications",
+    "categories": [
+      {
+        "categoryId": "77889",
+        "categoryName": "Internet",
+        "products": [
+          {
+            "productId": "998877",
+            "productName": "Smile Unlimited"
+          },
+          {
+            "productId": "887766",
+            "productName": "Smile Weekend Plan"
+          }
+        ]
+      }
+    ]
+  }
+]
