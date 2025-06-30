@@ -23,29 +23,29 @@ import org.springframework.web.bind.annotation.*;
 public class IdentityController {
     private final ThirdPartyService thirdPartyService;
 
-    @PostMapping(value = "nin-details", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/nin-details", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<APIResponse<KycServiceResponse>> ninDetails(@RequestBody @Valid KycServiceRequest request) {
-        return ResponseEntity.ok(new APIResponse<>("Success", "00", thirdPartyService.getNinDetailsForKYC(request)));
+        return ResponseEntity.ok(new APIResponse<>("Success", "000", thirdPartyService.getNinDetailsForKYC(request)));
     }
 
-    @PostMapping(value = "bvn-details", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/bvn-details", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<APIResponse<KycServiceResponse>> bvnDetails(@RequestBody @Valid KycServiceRequest request) {
-        return ResponseEntity.ok(new APIResponse<>("Success", "00", thirdPartyService.getBvnDetailsForKYC(request)));
+        return ResponseEntity.ok(new APIResponse<>("Success", "000", thirdPartyService.getBvnDetailsForKYC(request)));
     }
 
-    @GetMapping(value = "bank-enquiry", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/bank-enquiry", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<APIResponse<BankResponse>> createAccount() {
-        return ResponseEntity.ok(new APIResponse<>("Success", "00", thirdPartyService.getBankList()));
+        return ResponseEntity.ok(new APIResponse<>("Success", "000", thirdPartyService.getBankList()));
     }
 
 
-    @GetMapping(value = "get-billers", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/get-billers", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<APIResponse<BillersResponse>> getBiller() {
-        return ResponseEntity.ok(new APIResponse<>("Success", "00", thirdPartyService.getBiller()));
+        return ResponseEntity.ok(new APIResponse<>("Success", "000", thirdPartyService.getBiller()));
     }
 
-    @GetMapping(value = "get-biller-products/{billerId}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/get-biller-products/{billerId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<APIResponse<BillerResponse>> getBillerProducts(@PathVariable(name = "billerId")String billerId) {
-        return ResponseEntity.ok(new APIResponse<>("Success", "00", thirdPartyService.getBillerProductsDetails(billerId)));
+        return ResponseEntity.ok(new APIResponse<>("Success", "000", thirdPartyService.getBillerProductsDetails(billerId)));
     }
 }

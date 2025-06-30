@@ -64,7 +64,7 @@ public class CustomerServiceImplementation implements CustomerService {
 
             // Check for existing customer
             if (customerAlreadyExists(request)) {
-                return new MiddleWareResponse("46", "Customer already exists with provided details", false);
+                return new MiddleWareResponse("460", "Customer already exists with provided details", false);
             }
 
             // Create customer
@@ -83,7 +83,7 @@ public class CustomerServiceImplementation implements CustomerService {
                 details.setStatus(savedCustomerModel.getStatus());
 
                 return new MiddleWareResponse(
-                        "00",
+                        "000",
                         "Customer onboarded successfully",true, details
                 );
         }  catch (Exception e) {
@@ -123,7 +123,7 @@ public class CustomerServiceImplementation implements CustomerService {
         log.info("User's Account Info>>{}", account);
         log.info("User's Mode Info>>{}", customerModel);
 
-        return new MiddleWareResponse("00","Success",true, mapToAccountDetails(customerModel, account));
+        return new MiddleWareResponse("000","Success",true, mapToAccountDetails(customerModel, account));
     }
 
     @Override
@@ -133,7 +133,7 @@ public class CustomerServiceImplementation implements CustomerService {
             Optional<CustomerModel> optCustomer = customerRepository.findById(request.getCustomerId());
 
             if (optCustomer.isEmpty()) {
-                return new MiddleWareResponse("99", "Customer not found", false);
+                return new MiddleWareResponse("999", "Customer not found", false);
             }
 
             CustomerModel customer = optCustomer.get();
@@ -145,16 +145,16 @@ public class CustomerServiceImplementation implements CustomerService {
 
             boolean isValidated = performInitialValidation(customer,custRequest, request.getVerificationType());
             if (!isValidated){
-                return new MiddleWareResponse("99", "Invalid validation request", false);
+                return new MiddleWareResponse("999", "Invalid validation request", false);
             }else {
-                return new MiddleWareResponse("00", "Customer Identity Successfully Validated", true);
+                return new MiddleWareResponse("000", "Customer Identity Successfully Validated", true);
             }
 
 
 
         } catch (Exception e) {
             log.info("Exception occurred while validating customer identity: {}", e.getMessage());
-            return new MiddleWareResponse("99", "Validation failed: ", false);
+            return new MiddleWareResponse("999", "Validation failed: ", false);
         }
     }
 
@@ -295,7 +295,7 @@ public class CustomerServiceImplementation implements CustomerService {
 
     private MiddleWareResponse validateBVNForCustomer(CustomerModel customerModel, String bvn) {
         if (customerModel.getBvn() != null && !customerModel.getBvn().equals(bvn)) {
-            return new MiddleWareResponse("99", "BVN mismatch", false);
+            return new MiddleWareResponse("999", "BVN mismatch", false);
         }
 
         ValidationResult result = bvnValidationService.validateBVN(bvn, customerModel.getFirstName(), customerModel.getLastName());
@@ -308,10 +308,10 @@ public class CustomerServiceImplementation implements CustomerService {
             // Create account if fully verified and no account exists
             createAccountIfEligible(customerModel);
 
-            return new MiddleWareResponse("00", "BVN validated successfully", true);
+            return new MiddleWareResponse("000", "BVN validated successfully", true);
         }
 
-        return new MiddleWareResponse("99", result.getMessage(), false);
+        return new MiddleWareResponse("999", result.getMessage(), false);
     }
 
     private void updateCustomerStatus(CustomerModel customerModel, String verificationType) {

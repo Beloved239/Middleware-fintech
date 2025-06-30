@@ -68,7 +68,7 @@ class LedgerServiceImpl implements LedgerService {
         boolean exists = transactionRepository.existsByTransactionRef(request.getTransactionReference());
 
         if (exists) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new APIResponse<>("A Transaction with this ref exist", "301", null));
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new APIResponse<>("A Transaction with this ref exist", "303", null));
         }
 
         Account account = optionalAccount.get();
@@ -141,7 +141,7 @@ class LedgerServiceImpl implements LedgerService {
         transactionRepository.saveAll(transactionList);
         billTransactionRepository.saveAll(billTransactions);
 
-        return ResponseEntity.ok(new APIResponse<>("Transaction completed successfully", "0000", request.getTransactionReference()));
+        return ResponseEntity.ok(new APIResponse<>("Transaction completed successfully", "000", request.getTransactionReference()));
     }
 
     /**
@@ -166,7 +166,7 @@ class LedgerServiceImpl implements LedgerService {
         boolean exists = transactionRepository.existsByTransactionRef(request.getTransactionReference());
 
         if (exists) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new APIResponse<>("A Transaction with this ref exist", "301", null));
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new APIResponse<>("A Transaction with this ref exist", "303", null));
         }
 
         Account account = optionalAccount.get();
